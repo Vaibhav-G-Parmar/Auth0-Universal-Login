@@ -9,20 +9,7 @@ function App() {
     user,
     isAuthenticated,
     isLoading
-    //getAccessTokenSilently
   } = useAuth0();
-
-  // const [token, setToken] = React.useState(null);
-
-  // const getToken = async () => {
-  //   try {
-  //     const accessToken = await getAccessTokenSilently();
-  //     setToken(accessToken);
-  //     console.log('Access Token:', accessToken);
-  //   } catch (error) {
-  //     console.error('Error getting token:', error);
-  //   }
-  // };
 
   if (isLoading) {
     return <div className="loading">Loading...</div>;
@@ -57,13 +44,12 @@ function App() {
                 <p><strong>Name:</strong> {user.name}</p>
                 <p><strong>Email:</strong> {user.email}</p>
                 <p><strong>Email Verified:</strong> {user.email_verified ? '✅' : '❌'}</p>
-                <p><strong>Auth0 ID:</strong> {user.sub}</p>
               </div>
             </div>
 
             <div className="actions">
               <button 
-                onClick={() => logout({ returnTo: window.location.origin })}
+                onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
                 className="logout-btn"
               >
                 Log Out
