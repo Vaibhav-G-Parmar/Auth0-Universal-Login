@@ -22,7 +22,7 @@ function App() {
         
         {!isAuthenticated ? (
           <div className="login-section">
-            <p>Click below to log in with Auth0 Universal Login - it's pretty cool 😎, eh!</p>
+            <p>Secure authentication powered by Auth0 Universal Login - it's pretty cool 😎, eh!</p>
             <button 
               onClick={() => loginWithRedirect()}
               className="login-btn"
