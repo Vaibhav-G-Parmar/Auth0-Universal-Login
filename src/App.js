@@ -8,21 +8,21 @@ function App() {
     logout,
     user,
     isAuthenticated,
-    isLoading,
-    getAccessTokenSilently
+    isLoading
+    //getAccessTokenSilently
   } = useAuth0();
 
-  const [token, setToken] = React.useState(null);
+  // const [token, setToken] = React.useState(null);
 
-  const getToken = async () => {
-    try {
-      const accessToken = await getAccessTokenSilently();
-      setToken(accessToken);
-      console.log('Access Token:', accessToken);
-    } catch (error) {
-      console.error('Error getting token:', error);
-    }
-  };
+  // const getToken = async () => {
+  //   try {
+  //     const accessToken = await getAccessTokenSilently();
+  //     setToken(accessToken);
+  //     console.log('Access Token:', accessToken);
+  //   } catch (error) {
+  //     console.error('Error getting token:', error);
+  //   }
+  // };
 
   if (isLoading) {
     return <div className="loading">Loading...</div>;
