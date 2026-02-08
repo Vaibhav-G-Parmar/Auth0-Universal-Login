@@ -62,17 +62,6 @@ function App() {
             </div>
 
             <div className="actions">
-              <button onClick={getToken} className="token-btn">
-                Get Access Token
-              </button>
-              
-              {token && (
-                <div className="token-display">
-                  <p><strong>Access Token (first 50 chars):</strong></p>
-                  <code>{token.substring(0, 50)}...</code>
-                </div>
-              )}
-
               <button 
                 onClick={() => logout({ returnTo: window.location.origin })}
                 className="logout-btn"
@@ -81,10 +70,6 @@ function App() {
               </button>
             </div>
 
-            <details className="user-object">
-              <summary>Full User Object (click to expand)</summary>
-              <pre>{JSON.stringify(user, null, 2)}</pre>
-            </details>
           </div>
         )}
       </header>
